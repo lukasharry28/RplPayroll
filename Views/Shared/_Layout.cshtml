@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rpl Payroll</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' asp-append-version="true">
+    <link rel="stylesheet" href="/css/style.css" asp-append-version="true">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <NavLink class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+            <a class="logo">
+                <i class='bx bx-code-alt'></i>
+                <div class="logo-name"><span>Rpl </span>Payroll</div>
+            </a>
+        </NavLink>
+        <ul class="side-menu">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class='bx bxs-home'></i>Home</a></li>
+
+                <li><a asp-area="" asp-controller="Company" asp-action="Index"><i class='bx bx-buildings'></i>Company</a></li>
+
+                <li><a asp-area="" asp-controller="Employee" asp-action="Employee"><i class='bx bx-group'></i>Employee</a></li>
+
+                <li><a asp-area="" asp-controller="Home" asp-action="Privacy"><i class='bx bx-analyse'></i>Payroll</a></li>
+
+                <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
+
+                <li><a asp-area="" asp-controller="Payroll" asp-action="History"><i class='bx bx-history'></i>History</a></li>
+
+                <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout"><i class='bx bx-log-out-circle'></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+
+            <input type="checkbox" id="theme-toggle" hidden>
+
+            <label for="theme-toggle" class="theme-toggle"></label>
+
+            <a href="/notification" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+
+            <a href="/profile" class="profile">
+                <img src="images/logo.png">
+            </a>
+        </nav>
+        <!-- End of Navbar -->
+
+        <!-- Content -->
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        <!-- End Content -->
+
+    </div>
+    
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - WebApp - <a asp-area="Home" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="/js/index.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
